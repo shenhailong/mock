@@ -12,8 +12,11 @@ module.exports = {
    *  }
    * } data // 返回状态码
    */
-  returnBody({ status = 200, message = 'success', code = '1', data = {}, success = true }) {
+  returnBody({ status = 200, message = 'success', code = '1', data = {}, success = true, header }) {
     this.status = status;
+    if (header) {
+      this.response.set(header);
+    }
     this.body = {
       code,
       data,
