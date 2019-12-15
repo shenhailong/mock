@@ -3,8 +3,9 @@
 /**
  * @param {Egg.Application} app - egg application
  */
+
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.home.index);
-
+  const newsRouter = router.namespace('/oilmini');
+  newsRouter.get('/oil', controller.oilmini.index.index);
 };

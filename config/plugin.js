@@ -6,4 +6,9 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
+  routerPlus: {
+    enable: true,
+    package: 'egg-router-plus',
+  },
+
 };
