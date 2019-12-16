@@ -5,7 +5,7 @@ class LoginController extends Controller {
   // 登陆
   async index() {
     const { ctx } = this;
-    await ctx.service.oilmini.login.index(ctx.request.body);
+    await ctx.service.oilMini.login.index();
   }
 }
 

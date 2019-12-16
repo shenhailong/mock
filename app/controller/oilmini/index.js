@@ -5,7 +5,7 @@ class ArticleController extends Controller {
   // 列表
   async index() {
     const { ctx } = this;
-    await ctx.service.oilmini.index.index(ctx.request.body);
+    await ctx.service.oilMini.index.index();
   }
 
 }
