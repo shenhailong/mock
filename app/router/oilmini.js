@@ -8,6 +8,10 @@
 module.exports = app => {
   const { router, controller } = app;
   const newsRouter = router.namespace('/oilMini');
-  newsRouter.get('/oil', controller.oilMini.index.index);
-  newsRouter.get('/api/weapp/login/miniProgramLogin', controller.oilMini.login.index);
+  // newsRouter.get('/oil', controller.oilMini.index.index);
+  newsRouter.post('/auth/login', controller.oilMini.login.login);
+  newsRouter.post('/auth/login/sms', controller.oilMini.login.getCode);
+
+  // newsRouter.get('/api/weapp/login/miniProgramLogin', controller.oilMini.login.index);
+
 };

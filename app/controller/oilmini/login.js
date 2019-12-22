@@ -3,9 +3,15 @@ const Controller = require('egg').Controller;
 
 class LoginController extends Controller {
   // 登陆
-  async index() {
+  async login() {
     const { ctx } = this;
-    await ctx.service.oilMini.login.index();
+    await ctx.service.oilMini.login.login();
+  }
+
+  // 获取验证码
+  async getCode() {
+    const { ctx } = this;
+    await ctx.service.oilMini.login.getCode();
   }
 }
 

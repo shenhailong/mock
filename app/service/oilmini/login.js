@@ -1,8 +1,35 @@
 'use strict';
 const Service = require('egg').Service;
 
-class ArticleService extends Service {
-  // 登陆
+class LoginService extends Service {
+  // 未绑定账号，需要首次登陆
+  async login() {
+    const { ctx } = this;
+    // 未绑定账号，需要首次登陆
+    // ctx.returnBody({
+    //   code: '80001',
+    //   data: {
+    //     accessCode: '12212dsdf',
+    //   },
+    // });
+
+    // 登陆
+    ctx.returnBody({
+      data: {
+        accessToken: '12212dsdf',
+      },
+    });
+  }
+
+  // 获取验证码
+  async getCode() {
+    const { ctx } = this;
+    // 正常情况
+    // ctx.returnBody({});
+    // 未绑定账号
+    ctx.returnBody({ code: '80002', message: '未绑定账号' });
+  }
+
   async index() {
     const { ctx } = this;
     ctx.returnBody({
@@ -33,4 +60,4 @@ class ArticleService extends Service {
   }
 }
 
-module.exports = ArticleService;
+module.exports = LoginService;
